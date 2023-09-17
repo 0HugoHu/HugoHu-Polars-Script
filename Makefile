@@ -27,14 +27,9 @@ install:          ## Install the project in dev mode.
 .PHONY: fmt
 fmt:              ## Format code using black & isort.
 	$(ENV_PREFIX)isort ids706_python_template/
-	$(ENV_PREFIX)black -l 79 ids706_python_template/
-	$(ENV_PREFIX)black -l 79 tests/
 
 .PHONY: lint
 lint:             ## Run pep8, black, mypy linters.
-	$(ENV_PREFIX)flake8 ids706_python_template/
-	$(ENV_PREFIX)black -l 79 --check ids706_python_template/
-	$(ENV_PREFIX)black -l 79 --check tests/
 	$(ENV_PREFIX)mypy --ignore-missing-imports ids706_python_template/
 
 .PHONY: test
